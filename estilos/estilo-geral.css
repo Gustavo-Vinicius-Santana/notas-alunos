@@ -1,0 +1,212 @@
+/*CORES*/
+
+
+
+/*POSIÇÕES E CONFIGURAÇÕES*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+
+/*CONFIGURAÇÕES DA TELA INICIAL*/
+.espa{
+    margin-top: 1%;
+    margin-bottom: 1.5%;
+}
+.conteiner-nota{
+    display: flex;
+}
+.div-col{
+    width: 50%;
+    display: flex;
+    flex-flow: nowrap column;
+    align-items: center;
+}
+.div-col-cent{
+    width: 100%;
+    display: flex;
+    flex-flow: nowrap column;
+    align-items: center;
+}
+.in-name{
+    width: 70%;
+    height: 30px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: solid black 1px;
+    text-align: center;
+}
+.sel-materias{
+    width: 30%;
+    height: 25px;
+    text-align: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.in-nota{
+    width: 90%;
+    height: 25px;
+    text-align: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: solid black 1px;
+}
+
+
+/*CONFIGURAÇÃO DE BOTÃO*/
+.btn{
+    width: 200px;
+    height: 25px;
+    background-color: transparent;
+    border: solid black 1px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: black;
+    color: white;
+    border: solid white 1px;
+}
+
+
+/*ABAS POP-UP*/
+/*CONFIGURAÇÕES DA ABA FECHAR*/
+.div-fec{
+    display: flex;
+    justify-content: right;
+}
+.fec{
+    color: red;
+    cursor: pointer;
+}
+
+
+/*CONFIGURAÇÃO DA ABA 1*/
+.up1{
+    margin: auto;
+    width: 90%;
+    height: 600px;
+}
+.up1 h2{
+    text-align: center;
+}
+.tabel-result, .tb1{
+    border: none;
+}
+.div-result{
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.conteiner-aviso-a{
+    display: none;
+    justify-content: center;
+}
+
+
+/*CONFIGURAÇÃO DA ABA 2*/
+.up2{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+.up2 h2{
+    text-align: center;
+}
+.conteiner-boletim{
+    display: none;
+    justify-content: center;
+}
+.boletim, th, td{
+    border: solid black 1px;
+    border-collapse: collapse;
+    padding: 2.5px;
+    text-align: center;
+}
+.conteiner-aviso-b{
+    display: none;
+    justify-content: center;
+}
+
+
+/*CONFIGURAÇÕES ABA3*/
+.up3{
+    margin: auto;
+    width: 90%;
+    height: 600px;
+}
+.up3 h2{
+    text-align: center;
+}
+.conteiner-edicao{
+    display: none;
+    flex-flow: column;
+    align-items: center;
+}
+.nova{
+    height: 25px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: solid black 1px;
+    text-align: center;
+}
+.nota-edit{
+    display: flex;
+    justify-content: center;
+}
+.conteiner-aviso-edit{
+    display: none;
+    justify-content: center;
+}
+
+/*DISPLAY FLEX*/
+@media screen and (min-width: 760px){
+    main{
+        width: 70%;
+        margin: auto;
+        background-color: white;
+    }
+    .up1{
+        width: 40%;
+        height: 600px;
+    }
+    .up2{
+        width: 40%;
+        height: 600px;
+    }
+    .up3{
+        width: 40%;
+        height: 600px;
+    }
+    .in-nota{
+        width: 60%;
+    }
+}

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sistema de notas</title>
+
+    <link rel="stylesheet" href="estilos/estilo-geral.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+<body>
+    <header>
+        <h1>SISTEMA DE NOTAS</h1>
+    </header>
+
+    <main>
+        <div>
+            <form onsubmit="calcmedia()">
+                <div class="div-col-cent espa">
+                    <label for="nome">NOME</label>
+                    <input class="in-name nome-aluno" type="text" name="nome" placeholder="digite o nome e sobrenome" required>
+                </div>
+                <div class="div-col-cent espa">
+                    <label for="materia">MATERIA</label>
+                    <select class="sel-materias" name="materia" id="materia" required>
+                        <option value="1">MATEMATICA</option>
+                        <option value="2">FISICA</option>
+                        <option value="3">QUIMICA</option>
+                        <option value="4">HISTORIA</option>
+                        <option value="5">GEOGRAFIA</option>
+                        <option value="6">GRAMATICA</option>
+                        <option value="7">FILOSOFIA</option>
+                        <option value="8">SOCIOLOGIA</option>
+                        <option value="9">BIOLOGIA</option>
+                        <option value="10">REDAÇÃO</option>
+                        <option value="11">ARTES</option>
+                    </select>
+                </div>
+
+                <div class="conteiner-nota espa">
+                    <div class="div-col">
+                        <label for="nota1">NOTA 1</label>
+                        <input class="in-nota nota1" type="number" name="nota1" placeholder="nota1" required>
+                    </div>
+
+                    <div class="div-col">
+                        <label for="nota2">NOTA 2</label>
+                        <input class="in-nota nota2" type="number" name="nota2" placeholder="nota2" required>
+                    </div>
+                </div>
+
+                <div class="conteiner-nota espa">
+                    <div class="div-col">
+                        <label for="nota3">NOTA 3</label>
+                        <input class="in-nota nota3" type="number" name="nota3" placeholder="nota3" required>
+                    </div>
+
+                    <div class="div-col">
+                        <label for="nota4">NOTA 4</label>
+                        <input class="in-nota nota4" type="number" name="nota4" placeholder="nota4" required>
+                    </div>
+                </div>
+
+                <div class="div-col-cent espa">
+                    <input class="btn confirm" type="submit" value="CONFIRMAR">
+                </div>
+            </form>
+
+            <div class="div-col-cent espa">
+                <input class="btn abrir1" type="submit" value="BUSCAR">
+            </div>
+        </div>
+    </main>
+
+    <dialog class="up1">
+        <div class="div-fec">
+            <span class="material-symbols-outlined fec fechar1">close</span>
+        </div>
+        <h2>BUSCAR ALUNO</h2>
+        <form onsubmit="mostrar()">
+        <div class="div-col-cent espa">
+            <label for="nome">NOME</label>
+            <input class="in-name busc-nome" type="text" name="nome" placeholder="digite o nome e sobrenome" required>
+        </div>
+        <div class="div-col-cent espa">
+            <label for="materia">MATERIA</label>
+            <select class="sel-materias" name="materia" id="materia-busc">
+                <option value="1">MATEMATICA</option>
+                <option value="2">FISICA</option>
+                <option value="3">QUIMICA</option>
+                <option value="4">HISTORIA</option>
+                <option value="5">GEOGRAFIA</option>
+                <option value="6">GRAMATICA</option>
+                <option value="7">FILOSOFIA</option>
+                <option value="8">SOCIOLOGIA</option>
+                <option value="9">BIOLOGIA</option>
+                <option value="10">REDAÇÃO</option>
+                <option value="11">ARTES</option>
+            </select>
+        </div>
+        <div class="div-col-cent espa">
+            <input class="btn" type="submit" value="BUSCAR">
+        </div>
+        </form>
+
+        <div class="div-result">
+            <table class="tabel-result">
+                <th class="tb1">ALUNO:</th>
+                <td class="tb1"><label class="void-name"></label></td>
+                <tr>
+                    <th class="tb1">NOTA 1: </th>
+                    <td class="tb1"><label class="void-nota1"></label></td>
+                </tr>
+                <tr>
+                    <th class="tb1">NOTA 2: </th>
+                    <td class="tb1"><label class="void-nota2"></label></td>
+                </tr>
+                <tr>
+                    <th class="tb1">NOTA 3: </th>
+                    <td class="tb1"><label class="void-nota3"></label></td>
+                </tr>
+                <tr>
+                    <th class="tb1">NOTA 4: </th>
+                    <td class="tb1"><label class="void-nota4"></label></td>
+                </tr>
+                <tr>
+                    <th class="tb1">MEDIA: </th>
+                    <td class="tb1"><label class="void-media"></label></td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="conteiner-aviso-a">
+            <h3>aluno não encontrado.</h3>
+        </div>
+        <div class="div-col-cent espa">
+            <input class="btn abrir2" type="submit" value="BOLETIM">
+        </div>
+        <div class="div-col-cent espa">
+            <input class="btn abrir3" type="submit" value="EDITAR">
+        </div>
+    </dialog>
+
+    <dialog class="up2">
+        <div class="div-fec">
+            <span class="material-symbols-outlined fec fechar2">close</span>
+        </div>
+        <h2>BOLETIM</h2>
+        <form onsubmit="boletim()">
+        <div class="div-col-cent espa">
+            <label for="nome">NOME</label>
+            <input class="in-name busc-nome-b" type="text" name="nome" placeholder="digite o nome e sobrenome" required>
+        </div>
+        <div class="div-col-cent espa">
+            <input class="btn" type="submit" value="PESQUISAR">
+        </div>
+        </form>
+
+        <div class="conteiner-boletim">
+            <table class="boletim">
+                <thead>
+                    <th colspan="7">BOLETIM DE NOTAS</th>
+                    <tr>
+                        <th>MATERIAS</th>
+                        <th colspan="5">NOTAS</th>
+                        <th>SITUAÇÃO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>MATEMATICA</td>
+                    <td><label class="nm1"></label></td>
+                    <td><label class="nm2"></label></td>
+                    <td><label class="nm3"></label></td>
+                    <td><label class="nm4"></label></td>
+                    <td><label class="mm1"></label></td>
+                    <td><label class="sm1"></label></td>
+                    <tr>
+                        <td>FISICA<label class=""></label> </td>
+                        <td><label class="nf1"></label></td>
+                        <td><label class="nf2"></label></td>
+                        <td><label class="nf3"></label></td>
+                        <td><label class="nf4"></label></td>
+                        <td><label class="mf1"></label></td>
+                        <td><label class="sf1"></label></td>
+                    </tr>
+                    <tr>
+                        <td>QUIMICA<label class=""></label> </td>
+                        <td><label class="nq1"></label></td>
+                        <td><label class="nq2"></label></td>
+                        <td><label class="nq3"></label></td>
+                        <td><label class="nq4"></label></td>
+                        <td><label class="mq1"></label></td>
+                        <td><label class="sq1"></label> </td>
+                    </tr>
+                    <tr>
+                        <td>HISTORIA<label class=""></label></td>
+                        <td><label class="nh1"></label></td>
+                        <td><label class="nh2"></label></td>
+                        <td><label class="nh3"></label> </td>
+                        <td><label class="nh4"></label> </td>
+                        <td><label class="mh1"></label></td>
+                        <td><label class="sh1"></label></td>
+                    </tr>
+                    <tr>
+                        <td>GEOGRAFIA<label class=""></label></td>
+                        <td><label class="ng1"></label> </td>
+                        <td><label class="ng2"></label> </td>
+                        <td><label class="ng3"></label></td>
+                        <td><label class="ng4"></label></td>
+                        <td><label class="mg1"></label></td>
+                        <td><label class="sg1"></label></td>
+                    </tr>
+                    <tr>
+                        <td>GRAMATICA<label class=""></label></td>
+                        <td><label class="ngr1"></label></td>
+                        <td><label class="ngr2"></label></td>
+                        <td><label class="ngr3"></label></td>
+                        <td><label class="ngr4"></label></td>
+                        <td><label class="mgr1"></label></td>
+                        <td><label class="sgr1"></label></td>
+                    </tr>
+                    <tr>
+                        <td>FILOSOFIA<label class=""></label></td>
+                        <td><label class="nfl1"></label></td>
+                        <td><label class="nfl2"></label></td>
+                        <td><label class="nfl3"></label></td>
+                        <td><label class="nfl4"></label> </td>
+                        <td><label class="mfl1"></label></td>
+                        <td><label class="sfl1"></label></td>
+                    </tr>
+                    <tr>
+                        <td>SOCIOLOGIA <label class=""></label></td>
+                        <td><label class="nsc1"></label></td>
+                        <td><label class="nsc2"></label></td>
+                        <td><label class="nsc3"></label></td>
+                        <td><label class="nsc4"></label></td>
+                        <td><label class="msc1"></label></td>
+                        <td><label class="ssc1"></label></td>
+                    </tr>
+                    <tr>
+                        <td>BIOLOGIA<label class=""></label></td>
+                        <td><label class="nb1"></label></td>
+                        <td><label class="nb2"></label></td>
+                        <td><label class="nb3"></label></td>
+                        <td><label class="nb4"></label></td>
+                        <td><label class="mb1"></label></td>
+                        <td><label class="sb1"></label></td>
+                    </tr>
+                    <tr>
+                        <td>REDAÇÃO<label class=""></label> </td>
+                        <td><label class="nr1"></label></td>
+                        <td><label class="nr2"></label> </td>
+                        <td><label class="nr3"></label> </td>
+                        <td><label class="nr4"></label></td>
+                        <td><label class="mr1"></label></td>
+                        <td><label class="sr1"></label></td>
+                    </tr>
+                    <tr>
+                        <td>ARTES<label class=""></label></td>
+                        <td><label class="na1"></label></td>
+                        <td><label class="na2"></label></td>
+                        <td><label class="na3"></label></td>
+                        <td><label class="na4"></label></td>
+                        <td><label class="ma1"></label></td>
+                        <td><label class="sa1"></label> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="conteiner-aviso-b">
+            <h3>coloque nota para todas as materias na pagina inicial.</h3>
+        </div>
+    </dialog>
+
+    <dialog class="up3">
+        <div class="div-fec">
+            <span class="material-symbols-outlined fec fechar3">close</span>
+        </div>
+        <h2>EDITAR NOTA DO ALUNO</h2>
+
+            <div class="div-col-cent espa">
+                <label for="nome">NOME</label>
+                <input class="in-name busc-nome-edit" type="text" name="nome" placeholder="digite o nome e sobrenome" required>
+            </div>
+            <div class="div-col-cent espa">
+                <label for="materia">MATERIA</label>
+                <select class="sel-materias" name="materia" id="altera-esc">
+                    <option value="1">MATEMATICA</option>
+                    <option value="2">FISICA</option>
+                    <option value="3">QUIMICA</option>
+                    <option value="4">HISTORIA</option>
+                    <option value="5">GEOGRAFIA</option>
+                    <option value="6">GRAMATICA</option>
+                    <option value="7">FILOSOFIA</option>
+                    <option value="8">SOCIOLOGIA</option>
+                    <option value="9">BIOLOGIA</option>
+                    <option value="10">REDAÇÃO</option>
+                    <option value="11">ARTES</option>
+                </select>
+            </div>
+            <div class="div-col-cent espa">
+                <input class="btn busc" type="submit" value="PESQUISAR">
+            </div>
+
+            <div class="conteiner-edicao">
+                <div>
+                    <h3 class="val-nome"></h3>
+                </div>
+
+                <div>
+                    <div class="nota-edit">
+                        <label>nota 1=</label>
+                        <label class="val-nota-1">x</label>
+                    </div>
+                    <input class="nova nova1" type="number" name="nova-nota" placeholder="digitar nota 1">
+                </div>
+                <div>
+                    <div class="nota-edit">
+                        <label>nota 2=</label>
+                        <label class="val-nota-2">x</label>
+                    </div>
+                    <input class="nova nova2" type="number" name="nova-nota" placeholder="digitar nota 2">
+                </div>
+                <div>
+                    <div class="nota-edit">
+                        <label>nota 3=</label>
+                        <label class="val-nota-3">x</label>
+                    </div>
+                    <input class="nova nova3" type="number" name="nova-nota" placeholder="digitar nota 3" >
+                </div>
+                <div>
+                    <div class="nota-edit">
+                        <label>nota 4=</label>
+                        <label class="val-nota-4">x</label>
+                    </div>
+                    <input class="nova nova4" type="number" name="nova-nota" placeholder="digitar nota 4" >
+                </div>
+                <div>
+                    <h3 class="val-media"></>
+                </div>
+                <div class="div-col-cent espa">
+                    <input class="btn alteracao" type="submit" value="ALTERAR">
+                </div>
+            </div>
+            <div class="conteiner-aviso-edit">
+                <h3>aluno não encontrado.</h3>
+            </div>
+    </dialog>
+
+    <script src="comandos/comando.js"></script>
+</body>
+</html>
